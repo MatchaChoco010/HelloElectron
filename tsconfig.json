@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2017"
+    ],
+    "target": "ES5",
+    "module": "CommonJS",
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "pretty": true,
+    "version": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

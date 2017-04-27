@@ -1,0 +1,28 @@
+{
+  "name": "HelloElectron",
+  "version": "0.1.0",
+  "author": "satorf <satorf.t@gmail.com>",
+  "devDependencies": {
+    "@types/electron": "^1.4.37",
+    "@types/node": "^7.0.14",
+    "del": "^2.2.2",
+    "devtron": "^1.4.0",
+    "electron": "^1.6.6",
+    "glob": "^7.1.1",
+    "gulp": "^3.9.1",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "require-dir": "^0.3.1",
+    "ts-loader": "^2.0.3",
+    "tslint": "^5.1.0",
+    "typescript": "^2.3.1",
+    "webpack": "^2.4.1"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/satorf/HelloElectron",
+  "scripts": {
+    "build": "gulp build",
+    "prerelease": "gulp build --env production",
+    "start": "npm run build && electron ./app"
+  }
+}

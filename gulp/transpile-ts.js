@@ -1,0 +1,79 @@
+const gulp = require('gulp');
+const glob = require('glob');
+const path = require('path');
+const minimist = require('minimist');
+const webpack = require('webpack');
+
+
+const args = minimist(
+  process.argv.slice(2),
+  { string: 'env', default: { env: 'development' } }
+);
+
+
+const srcDir = path.resolve(__dirname, '../src');
+const appDir = path.resolve(__dirname, '../app');
+
+const baseOption = {
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+      },
+    ]
+  },
+  resolve: { extensions: [".tsx", ".ts", ".js"] },
+};
+
+const developOption = {
+  plugins: [
+    new webpack.DefinePlugin({ _DEBUG: JSON.stringify(true) }),
+  ],
+  devtool: 'inline-source-map',
+};
+
+const productionOption = {
+  plugins: [
+    new webpack.DefinePlugin({ _DEBUG: JSON.stringify(false) }),
+    new webpack.optimize.UglifyJsPlugin(),
+  ],
+};
+
+const mainOption = {
+  target: "electron-main",
+  context: srcDir,
+  entry: './main',
+  output: {
+    filename: 'main.js',
+    path: appDir,
+  },
+};
+
+const rendererOption = {
+  target: "electron-renderer",
+  context: srcDir,
+  entry:
+  glob.sync('./src/**/index.ts')
+  .map(p => path.relative('src', p))
+  .map(p => path.parse(p))
+  .map(parsed => `./${parsed.dir}/${parsed.name}`)
+  .reduce((entry, p) => { entry[p] = p; return entry; }, {}),
+  output: {
+    filename: '[name].js',
+    path: appDir,
+  },
+};
+
+
+
+
+const options = [mainOption, rendererOption]
+.map(option => Object.assign({}, baseOption, option))
+.map(option => Object.assign(option, args.env === 'production' ? productionOption : developOption));
+
+gulp.task('transpile-ts', ['clean'], cb => webpack(options, cb));
