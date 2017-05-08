@@ -11,8 +11,7 @@ script:
 before_deploy:
 - brew update
 - brew install wine
-- wine --version
-- brew install makensis
+- brew install mono
 - npm run archive
 deploy:
   provider: releases
