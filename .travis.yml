@@ -1,0 +1,26 @@
+os: osx
+osx_image: xcode8.3
+language: node_js
+node_js: node
+before_install:
+- brew update
+install:
+- npm install
+script:
+- npm test
+before_deploy:
+- brew update
+- brew install wine
+- wine --version
+- brew install makensis
+- npm run archive
+deploy:
+  provider: releases
+  api_key:
+    secure: q2sPAD9cA4I1jGoiBTaPDzJLDyGsAZxeLG1vad0J+Tl1kzNAXQFqLGzVwGjOqTfeNwQwvmY/P8XYkC0R9fxtRQ3SLxpr7aFKI039qE8KsFm6CsZ5nsQFkZm6hsfMRbPEpA18ETUv3zrr5ZOn7WkTYPljKCL/eUdc7f4Gf+RqBEY73a0R7CHlEYeMmr4Mukxt1UtcxUwLy4DBkqv5FIcfv6XX2g9L8c4506dLgt6ya6IfyIDcM+SP0cJ9N1mRhSmNUC2B6pWjUuHgTt/HxLqgMlHW24xud0aacUaU9wl2w/m9vFMNsDOzAbr2rA6U21ylHGLhvl+ypHTMjV1SL4TlOypeMwOGo3mw9MkWV0/frgy+1s+rj3IdZnsAbMDBfkcYeieH2NgOECElvETLqvS07FmDQpeLeyKI3wKjCIp4Swv5/6hi7EP/PA3xNg5V8Zqvl8D/blmQYsc4oPs0RuDB/liIr2wwGEBHwTQnmAr8naE+85UYSt7/JQB5u2XrJEyp96bX0e7rsUxAryfTN9fLmpZc8j3QfUvipeh0mNQC2/2ymY4EsK2nzGG13vD8vSvnu4UvsZXDkSrQG81YgiptiT02Qm6hZadG+vsP41DEmRBXK14jOpIEJudmqN1A8Y+0VxyWk2FpsgOeBySIzu1r3vRNkss6ng9maSRG3cpqTYo=
+  file_glob: true
+  file: dist/*
+  skip_cleanup: true
+  on:
+    repo: satorf/HelloElectron
+    tags: true
