@@ -7,7 +7,7 @@ const option = {
   dir: './app/',
   arch: 'all',
   asar: true,
-  icon: './tmp/icon',
+  icon: './icon/icon',
   out: './pack/',
   platform: ['win32', 'darwin', 'linux'],
   win32metadata: {

@@ -11,5 +11,5 @@ const option = {
 gulp.task(
   'create-icon',
   ['clean'],
-  () => icongen('./src/assets/icon.svg', './tmp/', option)
+  () => icongen('./src/assets/icon.svg', './icon/', option)
 );

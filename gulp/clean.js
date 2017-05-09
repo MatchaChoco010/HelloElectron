@@ -3,5 +3,5 @@ const del = require('del');
 
 gulp.task(
   'clean',
-  () => del(['app', 'pack', 'installer', 'dist', 'tmp'])
+  () => del(['app', 'pack', 'installer', 'dist', 'icon'])
 );
