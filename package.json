@@ -3,6 +3,7 @@
   "description": "Electronお試しアプリです。",
   "version": "0.1.0",
   "author": "satorf <satorf.t@gmail.com>",
+  "companyName": "Satorf",
   "devDependencies": {
     "@types/electron": "^1.4.37",
     "@types/mocha": "^2.2.41",
@@ -37,8 +38,5 @@
     "dev": "gulp transpile-and-copy --env development && electron ./app",
     "pack": "gulp pack",
     "test": "gulp test"
-  },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
   }
 }

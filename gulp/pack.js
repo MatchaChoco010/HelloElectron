@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const packager = require('electron-packager');
 
-const {name, description} = require('../package.json');
+const {name, description, companyName} = require('../package.json');
 
 const option = {
   dir: './app/',
@@ -11,6 +11,7 @@ const option = {
   out: './pack/',
   platform: ['win32', 'darwin', 'linux'],
   win32metadata: {
+    CompanyName: companyName,
     FileDescription: description,
     OriginalFilename: `${name}.exe`,
     ProductName: name,
