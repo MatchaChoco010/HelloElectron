@@ -1,7 +1,7 @@
 import {app, BrowserWindow} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
-import './startup';
+import './main/startup';
 
 let mainWindow: Electron.BrowserWindow | null;
 
@@ -12,7 +12,7 @@ const createMainWindow = () => {
   });
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'mainWindow/index.html'),
+    pathname: path.join(__dirname, 'renderer/mainWindow/index.html'),
     protocol: 'file:',
     slashes: true,
   }));
