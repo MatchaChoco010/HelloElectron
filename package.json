@@ -37,5 +37,8 @@
     "dev": "gulp transpile-and-copy --env development && electron ./app",
     "pack": "gulp pack",
     "test": "gulp test"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }

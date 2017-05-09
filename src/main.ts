@@ -2,6 +2,7 @@ import {app, BrowserWindow} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
+if (require('electron-squirrel-startup')) app.quit();
 
 if (_DEBUG) {
   // 開発用のツールをインストール
