@@ -10,6 +10,8 @@ function createInstaller() {
       appDirectory: appDir,
       outputDirectory: path.join('./installer/', `${path.relative('./pack', appDir)}-installer`),
       loadingGif: './src/assets/loading.gif',
+      // iconUrl: '',
+      // setupIcon: './icon/icon.ico',
       noMsi: true,
     })
   );
