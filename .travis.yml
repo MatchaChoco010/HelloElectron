@@ -10,8 +10,7 @@ script:
 - npm test
 before_deploy:
 - brew update
-- brew install wine
-- brew install mono
+- brew install wine mono
 - npm run archive
 deploy:
   provider: releases

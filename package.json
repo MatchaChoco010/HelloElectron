@@ -2,7 +2,10 @@
   "name": "HelloElectron",
   "description": "Electronお試しアプリです。",
   "version": "0.1.0",
-  "author": "satorf <satorf.t@gmail.com>",
+  "author": {
+    "name": "satorf",
+    "email": "<satorf.t@gmail.com>"
+  },
   "companyName": "Satorf",
   "devDependencies": {
     "@types/electron": "^1.4.37",
