@@ -52,7 +52,7 @@ const mainOption = {
   },
 };
 
-const rendererEntry = glob.sync('./src/**/index.ts')
+const rendererEntry = glob.sync('./src/**/index.tsx')
 .map(p => path.relative('src', p))
 .map(p => path.parse(p))
 .map(parsed => `./${parsed.dir}/${parsed.name}`)

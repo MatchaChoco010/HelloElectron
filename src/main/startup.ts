@@ -9,6 +9,9 @@ if (_DEBUG) {
     if (!extensions.hasOwnProperty('devtron')) {
       BrowserWindow.addDevToolsExtension(require('devtron').path);
     }
+    if (!extensions.hasOwnProperty('React Developer Tools')) {
+      BrowserWindow.addDevToolsExtension('node_modules/electron-react-devtools');
+    }
   });
 }
 

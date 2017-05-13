@@ -7,6 +7,14 @@
     "email": "<satorf.t@gmail.com>"
   },
   "companyName": "Satorf",
+  "dependencies": {
+    "@types/react": "^15.0.24",
+    "@types/react-dom": "^15.5.0",
+    "material-ui": "^0.18.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "rxjs": "^5.4.0"
+  },
   "devDependencies": {
     "@types/electron": "^1.4.37",
     "@types/mocha": "^2.2.41",
@@ -17,6 +25,7 @@
     "devtron": "^1.4.0",
     "electron": "^1.6.8",
     "electron-packager": "^8.7.0",
+    "electron-react-devtools": "^0.4.0",
     "electron-winstaller": "^2.5.2",
     "espower-typescript": "^8.0.0",
     "glob": "^7.1.1",
@@ -30,6 +39,7 @@
     "ts-loader": "^2.0.3",
     "tslint": "^5.1.0",
     "tslint-config-airbnb": "^1.1.1",
+    "tslint-react": "^3.0.0",
     "typescript": "^2.3.1",
     "webpack": "^2.4.1"
   },
