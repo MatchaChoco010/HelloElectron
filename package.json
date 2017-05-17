@@ -6,6 +6,7 @@
     "name": "satorf",
     "email": "<satorf.t@gmail.com>"
   },
+  "bugs": "https://github.com/satorf/HelloElectron/issues",
   "companyName": "Satorf",
   "dependencies": {
     "material-ui": "^0.18.1",
@@ -45,6 +46,10 @@
     "typescript": "^2.3.1",
     "webpack": "^2.4.1"
   },
+  "keywords": [
+    "Electron",
+    "React"
+  ],
   "license": "MIT",
   "repository": "https://github.com/satorf/HelloElectron",
   "scripts": {
