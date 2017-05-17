@@ -1,6 +1,6 @@
 import * as path from 'path';
-import {spawn} from 'child_process';
-import {app, BrowserWindow} from 'electron';
+import { spawn } from 'child_process';
+import { app, BrowserWindow } from 'electron';
 
 if (_DEBUG) {
   // 開発時には開発用のツールをインストール
@@ -36,7 +36,7 @@ if (process.argv.length > 1) {
       spawn(
         updateDotExe,
         ['--createShortcut', exeName],
-        {detached: true},
+        { detached: true },
       );
       app.quit();
       break;
@@ -45,7 +45,7 @@ if (process.argv.length > 1) {
       spawn(
         updateDotExe,
         ['--removeShortcut', exeName],
-        {detached: true},
+        { detached: true },
       );
       app.quit();
       break;

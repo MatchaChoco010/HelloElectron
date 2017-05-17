@@ -1,5 +1,8 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import {App} from './app';
+import * as injectTapEventPlugin from 'react-tap-event-plugin';
+import { App } from './app';
 
-ReactDom.render(<App name="Electron" />, document.getElementById('app'));
+injectTapEventPlugin();
+
+ReactDom.render(<App/>, document.getElementById('app'));

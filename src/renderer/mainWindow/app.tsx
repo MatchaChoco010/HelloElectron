@@ -1,5 +1,11 @@
 import * as React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MyAwesomeReactComponent } from './MyAwesomeReactComponent';
 
-const App = (props: {name: string}) => <h1>Hello {props.name}!</h1>;
+const App = () => (
+  <MuiThemeProvider>
+     <MyAwesomeReactComponent name="Hello Electron!"/>
+  </MuiThemeProvider>
+);
 
-export {App};
+export { App };
