@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "lib": [
-      "ES2017"
+      "ES2017",
+      "DOM"
     ],
     "target": "ES5",
     "module": "CommonJS",
@@ -12,7 +13,8 @@
     "noUnusedParameters": true,
     "strict": true,
     "pretty": true,
-    "version": true
+    "version": true,
+    "jsx": "react"
   },
   "compileOnSave": false,
   "buildOnSave": false,

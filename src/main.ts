@@ -19,7 +19,7 @@ const createMainWindow = () => {
 
   if (_DEBUG) { mainWindow.webContents.openDevTools(); }
 
-  mainWindow.on('closed', function () {
+  mainWindow.on('closed', () => {
     mainWindow = null;
   });
 };

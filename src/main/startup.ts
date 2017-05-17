@@ -7,7 +7,10 @@ if (_DEBUG) {
   app.on('ready', () => {
     const extensions = BrowserWindow.getDevToolsExtensions();
     if (!extensions.hasOwnProperty('devtron')) {
-      BrowserWindow.addDevToolsExtension(require('devtron').path);
+      BrowserWindow.addDevToolsExtension('node_modules/devtron');
+    }
+    if (!extensions.hasOwnProperty('React Developer Tools')) {
+      BrowserWindow.addDevToolsExtension('node_modules/electron-react-devtools');
     }
   });
 }
@@ -35,18 +38,16 @@ if (process.argv.length > 1) {
         ['--createShortcut', exeName],
         {detached: true},
       );
-      // .on('close', app.quit);
       app.quit();
       break;
     case '--squirrel-uninstall':
-      // --squirrel-installで行ったのを戻す
+      // --squirrel-installでの処理を戻す
       spawn(
         updateDotExe,
         ['--removeShortcut', exeName],
         {detached: true},
       );
       app.quit();
-      // .on('close', app.quit);
       break;
     case '--squirrel-obsolete':
       app.quit();
